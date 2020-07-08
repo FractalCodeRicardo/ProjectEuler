@@ -1,19 +1,21 @@
 package euler;
 
 public class P003LargestPrimeFactor implements IProblem {
+
+    private static long NumbreToTest = 12L;
+
     @Override
     public void solve() {
         long largestPrime = 0;
-        for (long i = 600851475142L; i < 1 ; i--) {
+        for (long i = NumbreToTest; i < 1 ; i--) {
 
-            if(600851475143L % i == 0 && isPrime(i)) {
+            if(NumbreToTest % i == 0 && isPrime(i)) {
                 largestPrime = i;
                 break;
             }
         }
         System.out.println(largestPrime);
     }
-
 
     private boolean isPrime(long number) {
         for (long i = 2; i < number; i++) {
