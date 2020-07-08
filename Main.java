@@ -21,7 +21,7 @@ public class Main {
 
         //problems.get(id).solve();
         HashMap<Integer, IProblem> problems = getProblems();
-        problems.get(3).solve();
+        problems.get(5).solve();
     }
 
     public static int tryInt(String number, int defaultValue) {
@@ -39,6 +39,9 @@ public class Main {
         problems.put(1, new P001Multiples3And5());
         problems.put(2, new P002EvenFibonacci());
         problems.put(3, new P003LargestPrimeFactor());
+        problems.put(4, new P004LargestPalindrome());
+        problems.put(5, new P005SmallestMultiple());
+
 
         return problems;
     }
