@@ -1,19 +1,21 @@
 
 public class P003LargestPrimeFactor implements IProblem {
 
-    private static long NumbreToTest = 12L;
+    private static long NumberToTest = 600851475143L;
 
     @Override
     public void solve() {
-        long largestPrime = 0;
-        for (long i = NumbreToTest; i < 1 ; i--) {
+        for (long i = 2; i < NumberToTest ; i++) {
 
-            if(NumbreToTest % i == 0 && isPrime(i)) {
-                largestPrime = i;
-                break;
+            if(NumberToTest % i == 0 ) {
+                long t = NumberToTest / i;
+                
+                if(isPrime(t)) {
+                    System.out.println(t);
+                    break;
+                }    
             }
         }
-        System.out.println(largestPrime);
     }
 
     private boolean isPrime(long number) {

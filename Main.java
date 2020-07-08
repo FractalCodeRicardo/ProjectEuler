@@ -21,7 +21,7 @@ public class Main {
 
         //problems.get(id).solve();
         HashMap<Integer, IProblem> problems = getProblems();
-        problems.get(2).solve();
+        problems.get(3).solve();
     }
 
     public static int tryInt(String number, int defaultValue) {
