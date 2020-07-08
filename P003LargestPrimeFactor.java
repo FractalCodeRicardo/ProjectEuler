@@ -1,4 +1,3 @@
-package euler;
 
 public class P003LargestPrimeFactor implements IProblem {
 

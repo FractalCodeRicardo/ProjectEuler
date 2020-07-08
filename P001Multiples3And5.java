@@ -1,4 +1,3 @@
-package euler;
 
 public class P001Multiples3And5 implements IProblem {
 

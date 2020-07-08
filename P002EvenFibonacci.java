@@ -1,4 +1,3 @@
-package euler;
 
 public class P002EvenFibonacci implements IProblem {
     @Override
