@@ -21,7 +21,7 @@ public class Main {
 
         //problems.get(id).solve();
         HashMap<Integer, IProblem> problems = getProblems();
-        problems.get(6).solve();
+        problems.get(7).solve();
     }
 
     public static int tryInt(String number, int defaultValue) {
@@ -41,7 +41,8 @@ public class Main {
         problems.put(3, new P003LargestPrimeFactor());
         problems.put(4, new P004LargestPalindrome());
         problems.put(5, new P005SmallestMultiple());
-        problems.put(6, new P006Suares());
+        problems.put(6, new P006Squares());
+        problems.put(7, new P007Prime());
 
         return problems;
     }
