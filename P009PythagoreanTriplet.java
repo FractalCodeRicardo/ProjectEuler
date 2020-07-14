@@ -9,7 +9,7 @@ public class P009PythagoreanTriplet implements IProblem {
     @Override
     public void solve() {
         
-        for (int a = 1; a < 1000; a ++) {
+        for (int a = 0; a < 1000; a ++) {
             
             //I 'll give values to a an then a solve the equations
 
@@ -18,8 +18,8 @@ public class P009PythagoreanTriplet implements IProblem {
             // b = 1000^2 - 2000a / 2000 - 2a
             // 0 = 2ab−2000a−2000b+1000000
             // 
-            int b = (int) ((Math.pow(1000, 2) - 2000*a) / 2000 - 2*a);
-            int c = (int) Math.sqrt(Math.pow(a, 2) + Math.pow(b,2));
+            double b =  ((Math.pow(1000, 2) - 2000*a) / 2000 - 2*a);
+            double c =  Math.sqrt(Math.pow(a, 2) + Math.pow(b,2));
 
             if (isPythagorean(a, b, c)) {                      
                 System.out.println(a + " + " + b + "+" + c + "=" + (a+b+c));
@@ -27,23 +27,56 @@ public class P009PythagoreanTriplet implements IProblem {
             }
         }
 
-        for (int c = 1; c < 1000; c ++) {
-
-            //a = b - 1000 + c
+        for (int c = 0; c < 1000; c ++) {
+            // a + b + c =1000
+            //a = 1000 - b - c
             //b^2 = c^2 - a^2
-            // b^2 = c^2 - (b - 1000 + c)^2
-            int b =(int) (0.5 * (Math.sqrt(Math.pow(c, 2) + 2000*c  + 1000000 ) -c + 1000));
-            int a = (int) Math.sqrt(Math.pow(c, 2) - Math.pow(b,2));
+            // b^2 = c^2 - (1000 - b - c)^2
+            double b =(double) (-0.5 * (c - 1000 + (Math.sqrt(Math.pow(c, 2) + 2000*c  - 1000000) )));
+            double a = (double) Math.sqrt(Math.pow(c, 2) - Math.pow(b,2));
 
-            System.out.println(a + " + " + b + "+" + c + "=" + (a+b+c));
-            System.out.println(Math.pow(a, 2) + " ^2  + " + Math.pow(b,2) + " ^2 = " + (Math.pow(a, 2) + Math.pow(b, 2)) + " = " + Math.pow(c,2));
+            if (isPythagorean(a, b, c)) { 
+                System.out.println(a + " + " + b + "+" + c + "=" + (a+b+c));
+                System.out.println(Math.pow(a, 2) + " ^2  + " + Math.pow(b,2) + " ^2 = " + (Math.pow(a, 2) + Math.pow(b, 2)) + " = " + Math.pow(c,2));
+    
+            }
+
+        }
+
+
+        for (int b = 0; b < 1000; b++) {
+            // a + b + c =1000
+            // a = 1000 -b -c
+            //c^2 = b^2 + (1000 -b -c)^2
+
+            double c = (-1*Math.pow(b,2) + b *1000 - 500000) / (-1000 + b);
+            double a = (double) Math.sqrt(Math.pow(c, 2) - Math.pow(b,2));
+
+            if (isPythagorean(a, b, c)) { 
+                System.out.println(a + " + " + b + "+" + c + "=" + (a+b+c));
+                System.out.println(Math.pow(a, 2) + " ^2  + " + Math.pow(b,2) + " ^2 = " + (Math.pow(a, 2) + Math.pow(b, 2)) + " = " + Math.pow(c,2));
+                System.out.println(a + " * " + b + " * " + c + "=" + (a*b*c));
+            }
 
         }
 
     }
 
-    private boolean isPythagorean(int a, int b, int c) {
+    private boolean isNatural(double d) {
+        return  d - Math.floor(d) == 0;
+    }
+
+    private boolean isPythagorean(double a, double b, double c) {
+        if(!isNatural(a)) return false;
+        if(!isNatural(b)) return false;
+        if(!isNatural(c)) return false;
+
+
         if (!(a < b && b < c)) {
+            return false;
+        }
+
+        if (a+b+c != 1000) {
             return false;
         }
 
