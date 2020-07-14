@@ -21,7 +21,7 @@ public class Main {
 
         //problems.get(id).solve();
         HashMap<Integer, IProblem> problems = getProblems();
-        problems.get(9).solve();
+        problems.get(10).solve();
     }
 
     public static int tryInt(String number, int defaultValue) {
@@ -45,6 +45,8 @@ public class Main {
         problems.put(7, new P007Prime());
         problems.put(8, new P008AdjacentDigits());
         problems.put(9, new P009PythagoreanTriplet());
+        problems.put(10, new P010SummationPrimes());
+
 
         return problems;
     }
