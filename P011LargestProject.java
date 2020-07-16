@@ -1,8 +1,11 @@
+import jdk.nashorn.internal.runtime.arrays.NumericElements;
+
 public class P011LargestProject implements IProblem {
 
-    private int rowSize = 18;
+    private int rowSize = 20;
 
-    private static int[] numbers = new int[] { 8, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77,
+    private static int[] numbers = new int[] { 
+            8, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77,
             91, 8, 49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 04, 56, 62, 00, 81, 49, 31, 73, 55,
             79, 14, 29, 93, 71, 40, 67, 53, 88, 30, 03, 49, 13, 36, 65, 52, 70, 95, 23, 04, 60, 11, 42, 69, 24, 68, 56,
             01, 32, 56, 71, 37, 02, 36, 91, 22, 31, 16, 71, 51, 67, 63, 89, 41, 92, 36, 54, 22, 40, 40, 28, 66, 33, 13,
@@ -21,25 +24,74 @@ public class P011LargestProject implements IProblem {
 
     @Override
     public void solve() {
+
+        long product = 0;
+
        for (int k = 0; k < numbers.length; k++) {
-
-        int i = getRow(k);
-        int j = getColumn(k);
-
-      //  if (i > i)
         
+        long hProduct = horizontal(k);
+        long dProduct = diagonal(k);
+        long vProduct = vertical(k);
+        long d2Product = diagonal2(k);
+
+        if(dProduct > product) {
+            product = dProduct;
+        }
+     
+        if(hProduct > product) {
+            product = hProduct;
+        }
+        
+        if(vProduct> product) {
+            product = vProduct;
+        }
+
+        if(d2Product> product) {
+            product = d2Product;
+        }
+
        }
-
+       System.out.println(product);
     }
 
-    private int getRow(int i) {
-        return (i / rowSize);
+    private long vertical(int k) {
+        int v1 = numbers[k];
+        int v2 = tryIndex(k + rowSize * 1);
+        int v3 = tryIndex(k + rowSize * 2);
+        int v4 = tryIndex(k + rowSize * 3);
+        return  v1 * v2 * v3 * v4;
     }
 
-    private int getColumn(int i) {
-        return i % rowSize;
+    private long horizontal(int k) {
+        int h1 = numbers[k];
+        int h2 = tryIndex(k + 1); 
+        int h3 = tryIndex(k + 2);
+        int h4 = tryIndex(k + 3);
+        return h1*h2*h3*h4;
     }
 
+    private long diagonal(int k) {
+        int d1 = numbers[k];
+        int d2 = tryIndex(k + rowSize * 1 + 1);
+        int d3 = tryIndex(k + rowSize * 2 + 2);
+        int d4 = tryIndex(k + rowSize * 3 + 3);
+        return d1 * d2 * d3 * d4;
+    }
 
+    private long diagonal2(int k) {
+        int d1 = numbers[k];
+        int d2 = tryIndex(k + rowSize * 1 - 1);
+        int d3 = tryIndex(k + rowSize * 2 - 2);
+        int d4 = tryIndex(k + rowSize * 3 - 3);
+        return d1 * d2 * d3 * d4;
+    }
+
+    private int tryIndex(int k) {
+        if (k < 0 || k > numbers.length -1 ){
+            return 0;
+        }
+
+        return numbers[k];
+    }
 
 }
