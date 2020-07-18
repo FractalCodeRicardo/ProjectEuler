@@ -21,7 +21,7 @@ public class Main {
 
         //problems.get(id).solve();
         HashMap<Integer, IProblem> problems = getProblems();
-        problems.get(12).solve();
+        problems.get(13).solve();
     }
 
     public static int tryInt(String number, int defaultValue) {
@@ -48,6 +48,8 @@ public class Main {
         problems.put(10, new P010SummationPrimes());
         problems.put(11, new P011LargestProject());
         problems.put(12, new P012Triangle());
+        problems.put(13, new P013LargeSum());
+        
 
 
 
