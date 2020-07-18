@@ -4,30 +4,35 @@ public class P012Triangle implements IProblem {
 
     @Override
     public void solve() {
-       /* long n = 1;
+        long n = 1;
         while(true) {
             long value = (n * (n + 1)) / 2;
-            if (testDivisors(value)) {
-                System.out.println("valor: " + value);
+            int divisors = numberOfDivisors(value);
+            if ( divisors > NumberDivisors) {
+                System.out.println(String.format("Valor: %s, divisores: %s", value, divisors));
                 break;
             }
 
             n++;
-        }*/
+        }
     }
 
     private int numberOfDivisors(long number) {
-       /* if(number < NumberDivisors) return false;
-
-        int n=0;
-        for (int i = 2; i < number; i++) {
-
+        int nDivisor = 0;
+        //System.out.println(number + " Divisores:");
+        for (int i = 2; i < Math.sqrt(number); i++) {            
             
+            if (number % i == 0) {
+                nDivisor++;
+
+                if(number / i != i)
+                    nDivisor++;
+
+          //      System.out.println(i);
+            }
         }
 
-        //System.out.print("");
-        //return false;*/
-        return 0;
+        return nDivisor + 2;
     }
     
 }
