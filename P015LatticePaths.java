@@ -1,5 +1,5 @@
 public class P015LatticePaths implements IProblem {
-    private int GridSize = 10;
+    private int GridSize = 3;
 
     @Override
     public void solve() {
@@ -7,16 +7,20 @@ public class P015LatticePaths implements IProblem {
     }
 
     private int path(int i, int j, int numberPaths) {
-        System.out.println(String.format("%s    %s", i, j));
+        //System.out.println(String.format("%s    %s  %s", i, j, numberPaths));
         if (i == GridSize  && j == GridSize ) {
-            return numberPaths + 1;
+            return  numberPaths + 1;
         }
 
-        if (i > GridSize || j > GridSize ) {
-            return 0;
+        if (i < GridSize) {
+            numberPaths =  path(i + 1, j, numberPaths);
         }
 
-        return path(i + 1, j, numberPaths) + path(i, j + 1, numberPaths);
+        if (j < GridSize) {
+            numberPaths =  path(i, j + 1, numberPaths);
+        }
+
+        return numberPaths;
     }
     
 }
