@@ -4,8 +4,6 @@ public class P005SmallestMultiple implements IProblem{
 
     @Override
     public void solve() {
-        // TODO Auto-generated method stub
-
         long number = maxNumer;
         while (true) {
 
