@@ -66,8 +66,7 @@ public class P017NumberLettersCount implements IProblem {
                             (thounsands> 0 || hundreds>0) && tens <=0 ? " and " : "";
             numberString += Numbers[units - 1];
         }
-
-        
+       
         return numberString;
     }
     
