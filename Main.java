@@ -21,7 +21,7 @@ public class Main {
 
         //problems.get(id).solve();
         HashMap<Integer, IProblem> problems = getProblems();
-        problems.get(15).solve();
+        problems.get(17).solve();
     }
 
     public static int tryInt(String number, int defaultValue) {
@@ -50,6 +50,8 @@ public class Main {
         problems.put(12, new P012Triangle());
         problems.put(13, new P013LargeSum());
         problems.put(15, new P015LatticePaths());
+        problems.put(16, new P016PowerDigitSum());
+        problems.put(17, new P017NumberLettersCount());
 
         return problems;
     }

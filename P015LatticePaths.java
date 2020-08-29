@@ -1,26 +1,39 @@
+import java.util.HashMap;
+
 public class P015LatticePaths implements IProblem {
-    private int GridSize = 3;
+    private int GridSize = 20;
+    private int iterations = 0;
+    private HashMap<String, Long> points = new HashMap<>();
 
     @Override
     public void solve() {
         System.out.println(path(0, 0, 0));
+        
+        System.out.println(iterations);
     }
 
-    private int path(int i, int j, int numberPaths) {
-        //System.out.println(String.format("%s    %s  %s", i, j, numberPaths));
-        if (i == GridSize  && j == GridSize ) {
-            return  numberPaths + 1;
-        }
+    private long path(int i, int j, long succesfulPaths) {
+        String point = String.format("%02d", i) + String.format("%02d", j);
+        System.out.println(point + "-" + succesfulPaths);
 
+        iterations ++;
+        if (i == GridSize && j == GridSize) 
+            return succesfulPaths + 1;
+        
+        if (points.containsKey(point)) 
+            return points.get(point);
+
+        long successfulPaths = 0;
         if (i < GridSize) {
-            numberPaths =  path(i + 1, j, numberPaths);
-        }
+            successfulPaths += path(i + 1, j, succesfulPaths);   
+        }  
 
         if (j < GridSize) {
-            numberPaths =  path(i, j + 1, numberPaths);
-        }
-
-        return numberPaths;
+            successfulPaths += path(i, j + 1, succesfulPaths);  
+        }   
+        
+        points.put(point, successfulPaths);    
+        return successfulPaths;
     }
-    
+
 }
