@@ -2,21 +2,17 @@ import java.util.HashMap;
 
 public class P015LatticePaths implements IProblem {
     private int GridSize = 20;
-    private int iterations = 0;
     private HashMap<String, Long> points = new HashMap<>();
 
     @Override
     public void solve() {
         System.out.println(path(0, 0, 0));
-        
-        System.out.println(iterations);
     }
 
     private long path(int i, int j, long succesfulPaths) {
         String point = String.format("%02d", i) + String.format("%02d", j);
         System.out.println(point + "-" + succesfulPaths);
 
-        iterations ++;
         if (i == GridSize && j == GridSize) 
             return succesfulPaths + 1;
         
