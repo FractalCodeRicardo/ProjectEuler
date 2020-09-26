@@ -40,7 +40,6 @@ public class P017NumberLettersCount implements IProblem {
     }
 
     private String toString(int number) {
-
         String numberString = "";
 
         int thounsands = number / 1000;
