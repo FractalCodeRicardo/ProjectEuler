@@ -21,7 +21,7 @@ public class Main {
 
         //problems.get(id).solve();
         HashMap<Integer, IProblem> problems = getProblems();
-        problems.get(20).solve();
+        problems.get(21).solve();
     }
 
     public static int tryInt(String number, int defaultValue) {
@@ -55,6 +55,7 @@ public class Main {
         problems.put(18, new P018MaximunPathSum());
         //Falta el 19
         problems.put(20, new P020Factorial());
+        problems.put(21, new P021AmicableNumbers());
         return problems;
     }
 }
