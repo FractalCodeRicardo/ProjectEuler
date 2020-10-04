@@ -21,7 +21,7 @@ public class Main {
 
         //problems.get(id).solve();
         HashMap<Integer, IProblem> problems = getProblems();
-        problems.get(22).solve();
+        problems.get(24).solve();
     }
 
     public static int tryInt(String number, int defaultValue) {
@@ -57,6 +57,7 @@ public class Main {
         problems.put(20, new P020Factorial());
         problems.put(21, new P021AmicableNumbers());
         problems.put(22, new P022NameScores());
+        problems.put(24, new P024LexiPermutation());
         return problems;
     }
 }
