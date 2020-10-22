@@ -1,4 +1,3 @@
-
 import java.util.HashMap;
 
 public class Main {
@@ -21,7 +20,7 @@ public class Main {
 
         //problems.get(id).solve();
         HashMap<Integer, IProblem> problems = getProblems();
-        problems.get(24).solve();
+        problems.get(25).solve();
     }
 
     public static int tryInt(String number, int defaultValue) {
@@ -58,6 +57,7 @@ public class Main {
         problems.put(21, new P021AmicableNumbers());
         problems.put(22, new P022NameScores());
         problems.put(24, new P024LexiPermutation());
+        problems.put(25, new P02510000Fibunacci());
         return problems;
     }
 }
