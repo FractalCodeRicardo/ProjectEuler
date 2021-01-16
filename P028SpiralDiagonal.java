@@ -1,6 +1,6 @@
 public class P028SpiralDiagonal implements IProblem {
 
-    private int size = 5;
+    
 
 /*
 
@@ -23,19 +23,45 @@ public class P028SpiralDiagonal implements IProblem {
 9, 49-82 
 
 */
-
+    private int size = 1001;
     @Override
     public void solve() {
         // TODO Auto-generated method stub
         
-        int size = 1;
-        while(true) {
 
-            for (int i = 0; i < array.length; i++) {
-                
+        int[] spiral = new int[size*size];
+
+        for (int i = 0; i < spiral.length; i++) {
+            spiral[i] = i + 1;
+        }
+
+        int i = 1;
+        int ratio = 3;
+        int sum = 1;
+        while(true) {
+            if (i> size * size -1) {
+                break;
             }
 
+            int k = 1;
+            for (int j = (int)Math.pow((ratio - 2), 2); j < Math.pow(ratio, 2); j++) {
+                
+                if (k % (ratio - 1) == 0) {
+                    System.out.print(spiral[j] + " ");
+                    sum += spiral[j];
+                }
+                
+
+                k++;
+                i++;
+            }
+            
+            System.out.println("");
+            ratio += 2;
+
         }
+
+        System.out.println(sum);
     }
 
 

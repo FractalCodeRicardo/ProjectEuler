@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         HashMap<Integer, IProblem> problems = getProblems();
-        problems.get(27).solve();
+        problems.get(28).solve();
     }
 
     public static int tryInt(String number, int defaultValue) {
@@ -45,6 +45,7 @@ public class Main {
         //Sin resolver
         problems.put(26, new P026ReciprocalCycle());
         problems.put(27, new P027QuadraticPrimes());
+        problems.put(28, new P028SpiralDiagonal());
         return problems;
     }
 }
