@@ -3,24 +3,8 @@ import java.util.HashMap;
 public class Main {
 
     public static void main(String[] args) {
-        // write your code here
-
-        /*if (args.length < 1) {
-            return;
-        }
-
-        int id = tryInt(args[0],0);
-
         HashMap<Integer, IProblem> problems = getProblems();
-
-        if (!problems.containsKey(id)) {
-            System.out.println("El problema no existe.");
-            return;
-        }*/
-
-        //problems.get(id).solve();
-        HashMap<Integer, IProblem> problems = getProblems();
-        problems.get(26).solve();
+        problems.get(27).solve();
     }
 
     public static int tryInt(String number, int defaultValue) {
@@ -58,7 +42,9 @@ public class Main {
         problems.put(22, new P022NameScores());
         problems.put(24, new P024LexiPermutation());
         problems.put(25, new P02510000Fibunacci());
+        //Sin resolver
         problems.put(26, new P026ReciprocalCycle());
+        problems.put(27, new P027QuadraticPrimes());
         return problems;
     }
 }
