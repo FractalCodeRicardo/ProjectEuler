@@ -21,7 +21,7 @@ public class P029DistinctPowers implements IProblem {
             }
         }
 
-       /* set.forEach(new Consumer<String>(){
+       /* set.forEach(new Consumer<String>(){f
             @Override
             public void accept(String arg0) {
                 System.out.print(arg0 + " ");
