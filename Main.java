@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         HashMap<Integer, IProblem> problems = getProblems();
-        problems.get(31).solve();
+        problems.get(32).solve();
     }
 
     public static int tryInt(String number, int defaultValue) {
@@ -49,6 +49,7 @@ public class Main {
         problems.put(29, new P029DistinctPowers());
         problems.put(30, new P030DigitsPower());
         problems.put(31, new P031CoinsSum());
+        problems.put(32, new P032PandigitalProducts());
         return problems;
     }
 }
