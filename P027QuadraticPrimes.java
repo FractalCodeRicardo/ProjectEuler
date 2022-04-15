@@ -2,7 +2,7 @@ public class P027QuadraticPrimes implements IProblem {
 
     @Override
     public void solve() {
-        // TODO Auto-generated method stub
+
 
         int rb = 0;
         int ra = 0;

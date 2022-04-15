@@ -6,7 +6,7 @@ public class P010SummationPrimes implements IProblem {
 
     @Override
     public void solve() {
-        // TODO Auto-generated method stub
+
 
         HashMap<Long, Boolean> primes = new HashMap<>();
         for (long i = 2; i < top; i++) {    

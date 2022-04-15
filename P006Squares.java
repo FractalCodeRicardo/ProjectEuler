@@ -4,7 +4,7 @@ public class P006Squares implements IProblem {
 
     @Override
     public void solve() {
-        // TODO Auto-generated method stub
+   
 
         long sumSquare = sumSquares();
         long squareSum = squareSum();

@@ -1,5 +1,4 @@
 import java.util.HashSet;
-import java.util.function.Consumer;
 
 public class P029DistinctPowers implements IProblem {
 
@@ -7,7 +6,7 @@ public class P029DistinctPowers implements IProblem {
 
     @Override
     public void solve() {
-        // TODO Auto-generated method stub
+
 
         HashSet<String> set =  new HashSet<>();
 

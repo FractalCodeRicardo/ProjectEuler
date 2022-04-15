@@ -26,7 +26,7 @@ public class P028SpiralDiagonal implements IProblem {
     private int size = 1001;
     @Override
     public void solve() {
-        // TODO Auto-generated method stub
+ 
         
 
         int[] spiral = new int[size*size];

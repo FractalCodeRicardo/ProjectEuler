@@ -6,7 +6,7 @@ public class P031CoinsSum implements IProblem {
 
     @Override
     public void solve() {
-        // TODO Auto-generated method stub
+
 
         for (int uno= 0; uno <= 200 ; uno++) 
             for (int dos = 0; dos <= 100; dos++) 

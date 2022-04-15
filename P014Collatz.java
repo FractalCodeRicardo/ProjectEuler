@@ -2,7 +2,7 @@ public class P014Collatz implements IProblem {
 
     @Override
     public void solve() {
-        // TODO Auto-generated method stub
+
 
         long largest = 0;
         int largestSecuence = 0;

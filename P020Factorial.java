@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class P020Factorial implements IProblem {
 
     private int number = 100;

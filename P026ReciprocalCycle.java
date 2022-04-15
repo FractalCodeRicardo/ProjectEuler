@@ -1,5 +1,3 @@
-import java.time.format.DecimalStyle;
-
 public class P026ReciprocalCycle implements IProblem {
 
     private int d = 1000;
