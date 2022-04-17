@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class Algorithms {
 
@@ -80,6 +83,36 @@ public class Algorithms {
 
         return zeros + number;
     }
+
+    public static  void permutation(int size, int[] a, Consumer<int[]> action) {
+        if (size == 1) {
+            action.accept(a);
+            return;
+        }
+
+        for (int i = 0; i < size; i++) {
+            permutation(size - 1, a, action);
+     
+            int t = a[size - 1];
+
+            if (size % 2 == 1) {
+                a[size - 1] = a[0];
+                a[0] = t;
+            } else {
+                a[size - 1] = a[i];
+                a[i] = t;
+            }
+        }
+    }
+
+    public static  void println(int[] arr) {
+        String arrString = Arrays.stream(arr)
+            .mapToObj(i -> String.valueOf(i))
+            .collect(Collectors.joining(","));
+
+        System.out.println(arrString);
+    }
+
 
 
 }
