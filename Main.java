@@ -3,11 +3,11 @@ import java.util.HashMap;
 public class Main {
 
     public static void main(String[] args) {
-        //HashMap<Integer, IProblem> problems = getProblems();
-        //problems.get(33).solve();
+        HashMap<Integer, IProblem> problems = getProblems();
+        problems.get(25).solve();
 
-        int[] arr = new int[] {1, 2, 3};
-        Algorithms.permutation(3, arr, array -> Algorithms.println(array));
+       /* int[] arr = new int[] {1, 2, 3};
+        Algorithms.permutation(3, arr, array -> Algorithms.println(array));*/
     }
 
     public static int tryInt(String number, int defaultValue) {

@@ -17,6 +17,7 @@ public class P02510000Fibunacci implements IProblem {
             if (next.length() == 1000) {
                 System.out.println(next);
                 System.out.println(index);
+                break;
             }
         }
     }
