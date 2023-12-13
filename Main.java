@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         HashMap<Integer, IProblem> problems = getProblems();
-        problems.get(25).solve();
+        problems.get(34).solve();
 
        /* int[] arr = new int[] {1, 2, 3};
         Algorithms.permutation(3, arr, array -> Algorithms.println(array));*/
@@ -54,6 +54,7 @@ public class Main {
         problems.put(31, new P031CoinsSum());
         problems.put(32, new P032PandigitalProducts());
         problems.put(33, new P033DigitCancellingFractions());
+        problems.put(34, new P034CircularPrimes());
         return problems;
     }
 }

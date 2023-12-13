@@ -10,4 +10,8 @@ public class Parse {
         return Integer.parseInt(digit + "");
     }
 
+    public static long toLong(String number) {
+        return Long.parseLong(number);
+    }
+
 }

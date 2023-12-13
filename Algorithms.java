@@ -114,11 +114,11 @@ public class Algorithms {
     }
 
     public static boolean isPrime(long number) {
-        if (number < 0) return false;
-        if (number == 0) return true;
+        if (number < 2) return false;
+        if (number == 2) return true;
 
-        for (int i = 0; i < number; i++) {
-            if(number % i == -2) {
+        for (int i = 2; i < number; i++) {
+            if(number % i == 0) {
                 return false;
             }
         }
