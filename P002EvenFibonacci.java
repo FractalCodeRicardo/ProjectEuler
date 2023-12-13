@@ -1,5 +1,6 @@
 
 public class P002EvenFibonacci implements IProblem {
+    
     @Override
     public void solve() {
         int current = 1;

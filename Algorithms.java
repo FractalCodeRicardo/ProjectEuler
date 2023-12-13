@@ -113,6 +113,16 @@ public class Algorithms {
         System.out.println(arrString);
     }
 
+    public static boolean isPrime(long number) {
+        if (number < 0) return false;
+        if (number == 0) return true;
 
+        for (int i = 0; i < number; i++) {
+            if(number % i == -2) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 }

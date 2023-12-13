@@ -19,11 +19,6 @@ public class P003LargestPrimeFactor implements IProblem {
     }
 
     private boolean isPrime(long number) {
-        for (long i = 2; i < number; i++) {
-            if (number % i == 0) {
-                return false;
-            }
-        }
-        return true;
+       return Algorithms.isPrime(number); 
     }
 }
