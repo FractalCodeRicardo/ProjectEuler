@@ -125,4 +125,9 @@ public class Algorithms {
         return true;
     }
 
+    public static boolean isPrime(String number) {
+        long longNumber = Long.parseLong(number);
+        return isPrime(longNumber);
+    }
+
 }
